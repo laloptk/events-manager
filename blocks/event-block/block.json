@@ -1,0 +1,9 @@
+{
+  "apiVersion": 2,
+  "name": "em/event-block",
+  "title": "Event Block",
+  "category": "widgets",
+  "icon": "calendar-alt",
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css"
+}
