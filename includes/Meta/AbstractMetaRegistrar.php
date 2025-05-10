@@ -5,6 +5,21 @@ abstract class AbstractMetaRegistrar {
     abstract protected function get_post_type(): string;
     abstract protected function get_fields(): array;
 
+    protected function register_meta_to_rest_api($field) {        
+        register_rest_field($this->get_post_type(), $field, [
+            'get_callback' => function ($object) use ($field) {
+                return get_post_meta($object['id'], $field, true);
+            },
+            'update_callback' => function ($value, $object) use ($field) {
+                update_post_meta($object->ID, $field, sanitize_text_field($value));
+            },
+            'schema' => [
+                'type' => 'string',
+                'context' => ['view', 'edit'],
+            ],
+        ]);
+    }
+
     public function register() {
         add_action('init', function () {
             foreach ($this->get_fields() as $field) {
@@ -18,6 +33,7 @@ abstract class AbstractMetaRegistrar {
                     }
                 ]);
             }
+            $this->register_meta_to_rest_api($field);
         });
     }
 }

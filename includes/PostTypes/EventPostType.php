@@ -12,7 +12,7 @@ class EventPostType extends AbstractPostType {
             'public' => true,
             'show_in_rest' => true,
             'menu_icon' => 'dashicons-calendar-alt',
-            'supports' => ['title', 'editor', 'thumbnail'],
+            'supports' => ['title', 'editor', 'thumbnail', 'custom-fields'],
         ];
     }
 }
