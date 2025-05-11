@@ -5,6 +5,7 @@ spl_autoload_register(function ($class) {
         $base_dir = $plugin_base . 'PostTypes/';
         $meta_dir = $plugin_base . 'Meta/';
         $block_dir = $plugin_base . 'Blocks/';
+        $settings_dir = $plugin_base . 'Settings/';
 
         $relative_class = substr($class, strlen('EventManager\\'));
         $path = str_replace('\\', '/', $relative_class) . '.php';
@@ -14,6 +15,7 @@ spl_autoload_register(function ($class) {
             $base_dir,
             $meta_dir,
             $block_dir,
+            $settings_dir,
         ];
 
         foreach ($possible_paths as $file) {
