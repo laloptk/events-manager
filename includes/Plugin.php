@@ -1,10 +1,10 @@
 <?php
-namespace EventOS;
+namespace EventOps;
 
-use EventOS\PostTypes\EventPostType;
-use EventOS\Meta\EventMeta;
-use EventOS\Blocks\EventBlock;
-use EventOS\Settings\SettingsPage;
+use EventOps\PostTypes\EventPostType;
+use EventOps\Meta\EventMeta;
+use EventOps\Blocks\EventBlock;
+use EventOps\Settings\SettingsPage;
 
 class Plugin {
     public function run() {

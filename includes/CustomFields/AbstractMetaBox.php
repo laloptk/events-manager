@@ -1,5 +1,5 @@
 <?php
-namespace EventOS\MetaBox;
+namespace EventOps\MetaBox;
 
 abstract class AbstractMetaBox {
     protected string $id;

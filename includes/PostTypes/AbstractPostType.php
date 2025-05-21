@@ -1,5 +1,5 @@
 <?php
-namespace EventOS\PostTypes;
+namespace EventOps\PostTypes;
 
 abstract class AbstractPostType {
     abstract protected function get_post_type(): string;

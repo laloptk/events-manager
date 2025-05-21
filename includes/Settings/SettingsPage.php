@@ -1,9 +1,9 @@
 <?php
-namespace EventOS\Settings;
+namespace EventOps\Settings;
 
 /**
  * Class SettingsPage
- * @package EventOS\SettingsPage
+ * @package EventOps\SettingsPage
  */
 class SettingsPage extends AbstractSettings {
     protected function get_settings_page(): string {

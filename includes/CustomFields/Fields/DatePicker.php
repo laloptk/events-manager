@@ -1,10 +1,10 @@
 <?php
-namespace EventOS\MetaBox\Field;
+namespace EventOps\MetaBox\Field;
 
-use EventOS\MetaBox\AbstractMetaField;
+use EventOps\MetaBox\AbstractMetaField;
 /**
  * Class DatePicker
- * @package EventOS\MetaBox\Field
+ * @package EventOps\MetaBox\Field
  *
  * A custom meta field for selecting a date.
  */

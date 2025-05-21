@@ -1,14 +1,14 @@
 <?php
-namespace EventOS\MetaBox\Field;
+namespace EventOps\MetaBox\Field;
 
-use EventOS\AbstractMetaField;
+use EventOps\AbstractMetaField;
 
 class Textarea extends AbstractMetaField {
     protected function render_field($value): void {
         printf(
             '<p><label for="%1$s">%2$s</label><br><textarea class="widefat" name="%1$s" id="%1$s" rows="4">%3$s</textarea></p>',
             esc_attr($this->name),
-            esc_html__($this->label, 'event-os'),
+            esc_html__($this->label, 'event-ops'),
             esc_textarea($value)
         );
     }

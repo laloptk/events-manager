@@ -1,5 +1,5 @@
 <?php
-namespace EventOS\Settings;
+namespace EventOps\Settings;
 abstract class AbstractSettings {
     abstract protected function get_settings_page(): string;
     abstract protected function get_settings(): array;
