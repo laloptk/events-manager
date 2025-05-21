@@ -34,7 +34,7 @@ abstract class AbstractMetaBox {
         if (!isset($_POST[$this->get_id() . '_nonce']) ||
             !wp_verify_nonce($_POST[$this->get_id() . '_nonce'], $this->get_id() . '_nonce_action') ||
             defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ||
-            !current_user_can('edit_post', $post_id)
+            ! current_user_can('edit_post', $post_id)
         ) {
             return;
         }
