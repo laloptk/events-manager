@@ -1,13 +1,13 @@
 <?php
 spl_autoload_register(function ($class) {
-    if (strpos($class, 'EventManager\\') === 0) {
+    if (strpos($class, 'EventOS\\') === 0) {
         $plugin_base = plugin_dir_path(__FILE__);
         $base_dir = $plugin_base . 'PostTypes/';
         $meta_dir = $plugin_base . 'Meta/';
         $block_dir = $plugin_base . 'Blocks/';
         $settings_dir = $plugin_base . 'Settings/';
 
-        $relative_class = substr($class, strlen('EventManager\\'));
+        $relative_class = substr($class, strlen('EventOS\\'));
         $path = str_replace('\\', '/', $relative_class) . '.php';
         
         $possible_paths = [
