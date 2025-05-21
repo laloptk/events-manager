@@ -1,5 +1,5 @@
 <?php
-namespace EventManager\Meta;
+namespace EventOS\Meta;
 
 class EventMeta extends AbstractMetaRegistrar {
     protected function get_post_type(): string {

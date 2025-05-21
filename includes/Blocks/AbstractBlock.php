@@ -1,5 +1,5 @@
 <?php
-namespace EventManager\Blocks;
+namespace EventOS\Blocks;
 
 abstract class AbstractBlock {
     abstract protected function get_block_type(): string;
