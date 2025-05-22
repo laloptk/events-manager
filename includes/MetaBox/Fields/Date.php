@@ -1,14 +1,14 @@
 <?php
-namespace EventOps\MetaBox\Field;
+namespace EventOps\MetaBox\Fields;
 
 use EventOps\MetaBox\AbstractMetaField;
 /**
- * Class DatePicker
+ * Class Date
  * @package EventOps\MetaBox\Field
  *
  * A custom meta field for selecting a date.
  */
-class DatePicker extends AbstractMetaField {
+class Date extends AbstractMetaField {
     protected function render_field($value): void {
         printf(
             '<p><label for="%1$s">%2$s</label><br><input type="date" class="widefat" name="%1$s" id="%1$s" value="%3$s" /></p>',

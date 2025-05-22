@@ -1,9 +1,14 @@
 <?php
-namespace EventOps\MetaBox\Field;
+namespace EventOps\MetaBox\Fields;
 
-use EventOps\AbstractMetaField;
-
-class Textarea extends AbstractMetaField {
+use EventOps\MetaBox\AbstractMetaField;
+/**
+ * Class Text
+ * @package EventOps\MetaBox\Field
+ *
+ * A custom meta field for entering text.
+ */
+class TextArea extends AbstractMetaField {
     protected function render_field($value): void {
         printf(
             '<p><label for="%1$s">%2$s</label><br><textarea class="widefat" name="%1$s" id="%1$s" rows="4">%3$s</textarea></p>',
