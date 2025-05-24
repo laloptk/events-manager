@@ -1,6 +1,6 @@
 {
   "apiVersion": 2,
-  "name": "em/event-block",
+  "name": "event-ops/event-block",
   "title": "Event Block",
   "category": "widgets",
   "icon": "calendar-alt",

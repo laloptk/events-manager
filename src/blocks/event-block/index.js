@@ -1,6 +1,6 @@
 import { registerBlockType } from '@wordpress/blocks';
 
-registerBlockType('em/event-block', {
+registerBlockType('event-ops/event-block', {
     edit: () => {
         return <p>Edit Event Block – customize this to pull event data.</p>;
     },

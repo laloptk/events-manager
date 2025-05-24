@@ -18,6 +18,9 @@ function event_manager_bootstrap() {
 }
 add_action('plugins_loaded', 'event_manager_bootstrap');
 
-add_action('init', function () {
+function eventops_load_textdomain() {
     load_plugin_textdomain('event-ops', false, dirname(plugin_basename(__FILE__)) . '/languages');
-});
+    $plugin = new EventOps\Plugin();
+    $plugin->register_blocks();
+}
+add_action('init', 'eventops_load_textdomain');
