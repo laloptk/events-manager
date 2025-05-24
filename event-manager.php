@@ -4,7 +4,6 @@
  * Description: OOP-based plugin with CPT, meta fields, and Gutenberg block.
  * Version: 1.0
  * Author: Eduardo Sanchez Hidalgo
- * Text Domain: event-ops
  */
 
 defined('ABSPATH') || exit;

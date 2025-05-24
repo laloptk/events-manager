@@ -2,8 +2,6 @@
 namespace EventOps\Blocks;
 
 class Blocks {
-    protected const BLOCKS_DIR = WP_PLUGINS_DIR . '/eventops/build/blocks/';
-
     public function register() {
         $paths = $this->get_blocks_paths();
         foreach ($paths as $path) {
@@ -12,10 +10,12 @@ class Blocks {
     }
 
     protected function get_blocks_paths(): array {
+        // Assuming the blocks are located in the 'build/blocks/' directory of the plugin
+        $blocks_path = WP_PLUGIN_DIR . '/eventops/build/blocks/';
         $blocks_list = apply_filters(
             'eventos_modify_block_paths', 
             array(
-                self::BLOCKS_DIR . 'event-block/',
+                $blocks_path . 'event-block/',
             )
         );
 
