@@ -16,6 +16,7 @@ class Blocks {
             'eventos_modify_block_paths', 
             array(
                 $blocks_path . 'event-block/',
+                $blocks_path . 'events-list/',
             )
         );
 

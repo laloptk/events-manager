@@ -1,0 +1,9 @@
+{
+  "apiVersion": 2,
+  "name": "event-ops/events-list",
+  "title": "EventsOps List",
+  "category": "widgets",
+  "icon": "calendar-alt",
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css"
+}
