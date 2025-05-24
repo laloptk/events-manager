@@ -10,17 +10,10 @@ defined('ABSPATH') || exit;
 
 require_once plugin_dir_path(__FILE__) . 'includes/Loader.php';
 
-use EventOps\Plugin;
-
-function eventops_bootstrap() {
-    $plugin = new EventOps\Plugin();
-    $plugin->run();
-}
-add_action('plugins_loaded', 'eventops_bootstrap');
-
+use EventOps\EventOpsPlugin;
 function eventops_load_textdomain() {
     load_plugin_textdomain('event-ops', false, dirname(plugin_basename(__FILE__)) . '/languages');
-    $plugin = new EventOps\Plugin();
-    $plugin->register_blocks();
 }
 add_action('init', 'eventops_load_textdomain');
+
+EventOpsPlugin::get_instance();
