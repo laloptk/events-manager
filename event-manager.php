@@ -17,3 +17,4 @@ function eventops_load_textdomain() {
 add_action('init', 'eventops_load_textdomain');
 
 EventOpsPlugin::get_instance();
+

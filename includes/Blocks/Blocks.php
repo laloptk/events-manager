@@ -17,6 +17,7 @@ class Blocks {
             array(
                 $blocks_path . 'event-block/',
                 $blocks_path . 'events-list/',
+                $blocks_path . 'events-list-w-filters/',
             )
         );
 

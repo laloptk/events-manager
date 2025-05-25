@@ -6,6 +6,6 @@ class EventMeta extends AbstractMetaRegistrar {
         return 'event';
     }
     protected function get_fields(): array {
-        return ['date', 'type', 'location', 'description'];
+        return ['_event_ops_start_date', '_event_ops_end_date', '_event_ops_type', '_event_ops_location', '_event_ops_description'];
     }
 }

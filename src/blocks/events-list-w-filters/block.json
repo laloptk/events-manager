@@ -1,0 +1,10 @@
+{
+  "apiVersion": 2,
+  "name": "event-ops/events-list-w-filters",
+  "title": "EventsOps List With Filters",
+  "description": "A block to display a list of events with filters.",
+  "category": "widgets",
+  "icon": "calendar-alt",
+  "editorScript": "file:./index.js",
+  "style": "file:./style.css"
+}
