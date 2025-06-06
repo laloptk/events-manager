@@ -5,5 +5,27 @@
   "category": "widgets",
   "icon": "calendar-alt",
   "editorScript": "file:./index.js",
-  "style": "file:./style.css"
+  "style": "file:./style.css",
+  "attributes": {
+    "eventsArgs": {
+      "type": "object",
+      "default": {
+        "per_page": 20,
+        "order": "desc",
+        "authors": [],
+        "search": ""
+      }
+    },
+    "userArgs": {
+      "type": "object",
+      "default": {
+        "per_page": 20,
+        "search": ""
+      }
+    },
+    "selectedUsers" : {
+      "type": "array",
+      "default": []
+    }
+  }
 }
