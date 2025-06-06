@@ -12,7 +12,6 @@
       "default": {
         "per_page": 20,
         "order": "desc",
-        "authors": [],
         "search": ""
       }
     },
