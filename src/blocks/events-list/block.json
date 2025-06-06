@@ -25,6 +25,10 @@
     "selectedUsers" : {
       "type": "array",
       "default": []
+    },
+    "status": {
+      "type": "string",
+      "defualt": "all"
     }
   }
 }

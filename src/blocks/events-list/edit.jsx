@@ -2,27 +2,12 @@ import { __ } from '@wordpress/i18n';
 import { useBlockProps } from '@wordpress/block-editor';
 import { useEntityRecords } from '@wordpress/core-data';
 import { Spinner } from '@wordpress/components';
-import { InspectorControls } from '@wordpress/block-editor';
-import {
-    SearchControl,
-    SelectControl,
-    PanelBody,
-} from '@wordpress/components';
-import MultiPick from '../../components/organisms/MultiPick';
+import EventsListInspectorControls from './components/EventsListInspectorControls';
 
 const Edit = ({ attributes, setAttributes }) => {
-    const {
-        eventsArgs,
-        userArgs,
-        selectedUsers
-    } = attributes;
+    const { eventsArgs } = attributes;
 
     const events = useEntityRecords('postType', 'event', eventsArgs);
-    const users = useEntityRecords('root', 'user', userArgs);
-
-    const updateAttribute = (attribute, value) => {
-        setAttributes({ [attribute]: value });
-    }
 
     // Function to render the main content with proper error handling
     const renderEventsList = () => {
@@ -68,42 +53,7 @@ const Edit = ({ attributes, setAttributes }) => {
 
     return (
         <>
-            <InspectorControls>
-                <PanelBody title={__('Filter by', 'event-ops')}>
-                    <SearchControl
-                        label="Search"
-                        value={eventsArgs?.search || ''}
-                        onChange={(value) => updateAttribute("eventsArgs", { ...eventsArgs, search: value || '' })}
-                        __nextHasNoMarginBottom
-                    />
-                    <MultiPick
-                        data={users?.records || []}
-                        selectedTokens={selectedUsers || []}
-                        label="Filter by user"
-                        attrName="selectedUsers"
-                        onSelectionChange={updateAttribute}
-                    />
-                </PanelBody>
-                <PanelBody title={__('Order by', 'event-ops')}>
-                    <SelectControl
-                        label={__('Order Events List', 'event-ops')}
-                        value={eventsArgs?.order || 'desc'}
-                        options={[{ label: 'ASC', value: 'asc' }, { label: 'DESC', value: 'desc' }]}
-                        onChange={(value) => updateAttribute('eventsArgs', { ...eventsArgs, order: value })}
-                        __nextHasNoMarginBottom={true}
-                        __next40pxDefaultSize={true}
-                    />
-                    <SelectControl
-                        label={__('Order by', 'event-ops')}
-                        value={'date'}
-                        options={[{ label: __('Start Date'), value: 'start date' }, { label: __('Title'), value: 'title' }]}
-                        onChange={(value) => console.log(value)}
-                        __nextHasNoMarginBottom={true}
-                        __next40pxDefaultSize={true}
-                    />
-                </PanelBody>
-            </InspectorControls>
-
+            <EventsListInspectorControls attrs={attributes} setAttrs={setAttributes} />
             {renderEventsList()}
         </>
     )
