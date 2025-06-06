@@ -12,7 +12,8 @@
       "default": {
         "per_page": 20,
         "order": "desc",
-        "search": ""
+        "search": "",
+        "author": []
       }
     },
     "userArgs": {
@@ -21,10 +22,6 @@
         "per_page": 20,
         "search": ""
       }
-    },
-    "selectedUsers" : {
-      "type": "array",
-      "default": []
     },
     "status": {
       "type": "string",

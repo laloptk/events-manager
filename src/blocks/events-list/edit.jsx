@@ -9,6 +9,10 @@ const Edit = ({ attributes, setAttributes }) => {
 
     const events = useEntityRecords('postType', 'event', eventsArgs);
 
+    const updateAttribute = (attribute, value) => {
+        setAttrs({ [attribute]: value });
+    }
+
     // Function to render the main content with proper error handling
     const renderEventsList = () => {
         // Still loading

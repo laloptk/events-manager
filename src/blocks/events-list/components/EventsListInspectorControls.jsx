@@ -9,7 +9,7 @@ import {
 } from '@wordpress/components';
 
 const EventsListInspectorControls = ({attrs, setAttrs}) => {
-    const {selectedUsers, status, userArgs, eventsArgs} = attrs;
+    const {status, userArgs, eventsArgs} = attrs;
     const users = useEntityRecords('root', 'user', userArgs);
     
     const updateAttribute = (attribute, value) => {
@@ -48,9 +48,10 @@ const EventsListInspectorControls = ({attrs, setAttrs}) => {
                 />
                 <MultiPick
                     data={users?.records || []}
-                    selectedTokens={selectedUsers || []}
+                    selectedTokens={eventsArgs.author || []}
                     label="Filter by user"
-                    attrName="selectedUsers"
+                    attrName="eventsArgs"
+                    args={eventsArgs}
                     onSelectionChange={updateAttribute}
                 />
             </PanelBody>

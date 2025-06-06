@@ -1,6 +1,6 @@
 import { FormTokenField } from '@wordpress/components';
 
-const MultiPick = ({ data, selectedTokens, label, onSelectionChange, attrName }) => {
+const MultiPick = ({ data, selectedTokens, label, onSelectionChange, attrName, args = {} }) => {
     const tokens = data ? data.map(token => ({
         value: token.id,
         label: token.name
@@ -29,7 +29,14 @@ const MultiPick = ({ data, selectedTokens, label, onSelectionChange, attrName })
             suggestions={tokens.map(option => option.label)}
             onChange={(values) => {
                 const tokenIds = getSelectedValues(data, values);
-                onSelectionChange( attrName, tokenIds );
+                console.log({...args, author: tokenIds});
+                args ? 
+                
+                    (   
+                        onSelectionChange( attrName, {...args, author: tokenIds} ))
+                : 
+                    (onSelectionChange(attrName, tokenIds))
+
             }}
             placeholder="Type to search users..."
             maxSuggestions={8}
