@@ -9,7 +9,7 @@ import {
 } from '@wordpress/components';
 
 const EventsListInspectorControls = ({attrs, setAttrs}) => {
-    const {status, userArgs, eventsArgs} = attrs;
+    const {userArgs, eventsArgs} = attrs;
     const users = useEntityRecords('root', 'user', userArgs);
     
     const updateAttribute = (attribute, value) => {
@@ -27,7 +27,7 @@ const EventsListInspectorControls = ({attrs, setAttrs}) => {
                 />
                 <SelectControl
                     label={__('Filter by Event Status', 'event-ops')}
-                    value={status}
+                    value={eventsArgs.event_status || ''}
                     options={
                         [
                             { value: 'all', label: 'All Events'},
@@ -42,7 +42,9 @@ const EventsListInspectorControls = ({attrs, setAttrs}) => {
                             { value: 'distant', label: 'Distant Future (3+ months)' }
                         ]
                     }
-                    onChange={value => updateAttribute('status', value)}
+                    onChange={(value) => {
+                        updateAttribute('eventsArgs', {...eventsArgs, event_status: value});
+                    }}
                     __nextHasNoMarginBottom={true}
                     __next40pxDefaultSize={true}
                 />

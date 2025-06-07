@@ -5,7 +5,9 @@ import { Spinner } from '@wordpress/components';
 import EventsListInspectorControls from './components/EventsListInspectorControls';
 
 const Edit = ({ attributes, setAttributes }) => {
-    const { eventsArgs } = attributes;
+    let { eventsArgs } = attributes;
+    console.log(eventsArgs)
+    eventsArgs = {...eventsArgs, meta_key: '_event_ops_start_date', start_before:'2025-06-06'}
 
     const events = useEntityRecords('postType', 'event', eventsArgs);
 
